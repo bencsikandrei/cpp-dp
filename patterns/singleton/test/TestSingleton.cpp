@@ -3,8 +3,9 @@
 
 #include <Singleton_old.hpp>
 
-
 TEST_CASE("Catch works and this should fail", "[catch]") {
-	REQUIRE(false);
+	Singleton* onlyInstance { Singleton::get() };
+
+	REQUIRE(onlyInstance != nullptr);
 }
 

@@ -7,3 +7,7 @@ message("-- Setting new runtime output: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 
 ## Add the test executable
 add_executable(TestSingleton TestSingleton.cpp)
+
+## Link library
+target_link_libraries(TestSingleton singletondp)
+
