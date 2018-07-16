@@ -3,13 +3,9 @@
 #include <mutex>
 
 Singleton& Singleton::get() {
-
+	std::lock_guard<std::mutex> lock(singletonLock);
 	if(not instance) {
-		singletonLock.lock();
-		if(not instance) {
-			instance = new Singleton;
-		}
-		singletonLock.unlock();
+		instance = new Singleton;
 	}
 	return *instance;
 }
