@@ -1,15 +1,18 @@
 #include <Singleton_old.hpp>
 #include <iostream>
+#include <mutex>
 
-Singleton* Singleton::get() {
+Singleton& Singleton::get() {
 
 	if(not instance) {
-		instance = new Singleton;
-		std::cout << "Instanciated singleton" << '\n';
+		singletonLock.lock();
+		if(not instance) {
+			instance = new Singleton;
+		}
+		singletonLock.unlock();
 	}
-	return instance;
+	return *instance;
 }
 
-Singleton::Singleton() {}
-
 Singleton* Singleton::instance{nullptr};
+std::mutex Singleton::singletonLock{};

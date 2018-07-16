@@ -13,17 +13,17 @@ bool all_equal(T&& first, T&& second) {
 	return (first == second);
 }
 
-TEST_CASE("Singleton should return an object that's not null", "[Singleton]") {
-	Singleton* onlyInstance { Singleton::get() };
-
-	REQUIRE(onlyInstance != nullptr);
-}
+// TEST_CASE("Singleton should return an object that's not null", "[Singleton]") {
+// 	Singleton& onlyInstance { Singleton::get() };
+//
+// 	REQUIRE(&onlyInstance != nullptr);
+// }
 
 TEST_CASE("Singleton should return the same instance every time it's called", "[Singleton]") {
-	Singleton* firstOnlyInstance { Singleton::get() };
-	Singleton* secondOnlyInstance { Singleton::get() };
-	Singleton* thirdOnlyInstance { Singleton::get() };
+	Singleton& firstOnlyInstance { Singleton::get() };
+	Singleton& secondOnlyInstance { Singleton::get() };
+	Singleton& thirdOnlyInstance { Singleton::get() };
 	// Same addresses
-	REQUIRE(all_equal(firstOnlyInstance, secondOnlyInstance, thirdOnlyInstance));
+	REQUIRE(all_equal(&firstOnlyInstance, &secondOnlyInstance));
 }
 
