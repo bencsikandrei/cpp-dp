@@ -2,7 +2,10 @@
 
 class SingletonNew {
 public:
-	static SingletonNew& get();
+	static SingletonNew& get() {
+		static SingletonNew instance;
+		return instance;
+	}
 
 private:
 	SingletonNew() = default;
