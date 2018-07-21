@@ -17,4 +17,5 @@ link_directories(${CMAKE_BINARY_DIR}/lib)
 ## Add the subdirectories and their CMakeLists
 add_subdirectory(patterns)
 
-
+## Add the subdirectories and their CMakeLists
+add_subdirectory(solid)
