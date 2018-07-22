@@ -48,5 +48,5 @@ int main() {
 
     process(r);
 
-    process(sq)
+    process(sq);
 }
