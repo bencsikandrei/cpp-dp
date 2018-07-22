@@ -38,7 +38,7 @@ struct Relationships {
     auto end() { return relationships.end(); }
     auto cbegin() const { return relationships.cbegin(); }
     auto cend() const { return relationships.end(); }
-    int size() { return begin() - end(); }
+    ptrdiff_t size() { return end() - begin(); }
 
   private:
     void addRelationship(Person &pers1, Relationship relation, Person &pers2) {
