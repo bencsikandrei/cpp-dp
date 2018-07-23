@@ -13,6 +13,7 @@ macro(add_gtest tcname source)
 		message("-- Linked with library: ${libs}")
 		target_link_libraries(${tcname} ${libs})
 	endif()
+	message("-- Added gtest: ${tcname}")
 endmacro()
 
 add_subdirectory(singleton)

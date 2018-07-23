@@ -14,12 +14,8 @@ endmacro()
 
 ## Create the library
 add_and_install_library(factorymethodp ${FM_SOURCES} "${CMAKE_BINARY_DIR}/lib")
-add_library(factorydp STATIC ${F_SOURCES})
-add_library(innerfactorydp STATIC ${IF_SOURCES})
-
-## Install the library
-install(TARGETS factorydp DESTINATION "${CMAKE_BINARY_DIR}/lib")
-install(TARGETS innerfactorydp DESTINATION "${CMAKE_BINARY_DIR}/lib")
+add_and_install_library(factorydp ${F_SOURCES} "${CMAKE_BINARY_DIR}/lib")
+add_and_install_library(innerfactorydp ${IF_SOURCES} "${CMAKE_BINARY_DIR}/lib")
 
 ## Compile the tests as well
 add_subdirectory(test)
