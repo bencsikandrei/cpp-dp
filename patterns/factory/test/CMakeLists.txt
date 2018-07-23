@@ -7,3 +7,4 @@ message("-- Setting new runtime output: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 
 ## Add more tests
 add_gtest(TestFactoryMethod TestFactoryMethod.cpp factorymethodp)
+add_gtest(TestFactory TestFactory.cpp factorydp)
