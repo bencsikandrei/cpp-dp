@@ -16,6 +16,12 @@ macro(add_gtest tcname source)
 	message("-- Added gtest: ${tcname}")
 endmacro()
 
+## Add and install library
+macro (add_and_install_library name sources destination)
+	add_library(${name} STATIC ${sources})
+	install(TARGETS ${name} DESTINATION ${destination})
+endmacro()
+
 add_subdirectory(singleton)
 add_subdirectory(strategy)
 add_subdirectory(builder)
