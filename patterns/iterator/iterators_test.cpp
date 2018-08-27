@@ -56,9 +56,4 @@ int main() {
 
     std::cout << "After: Destination contains\n";
     print(destinations);
-    //
-    // use a lambda
-    std::fill(destinations.begin(), destinations.end(), Destination{255});
-    std::cout << "Before: Destination contains\n";
-    print(destinations);
 }
